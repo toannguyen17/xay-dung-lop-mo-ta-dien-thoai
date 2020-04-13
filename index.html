@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
+	<script type="text/javascript" src="Mobile.js"></script>
+	<script type="text/javascript" src="Messenger.js"></script>
+	<script type="text/javascript" src="Battery.js"></script>
+	<style type="text/css">
+		button {
+			outline: none;
+			padding: 6px 12px;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+<p>[Bài tập] Xây dựng lớp mô tả điện thoại</p>
+<div id="nokia" style="padding: 15px; border: 1px solid #ddd">
+	<h3>Điện thoại Nokia.</h3>
+	<p>Trạng thái: <strong class="status">OFF</strong></p>
+	<p>Hòm thư đến: <strong class="thuDen">0</strong></p>
+	<p>Hòm thư đi: <strong class="thuDi">0</strong></p>
+	<p>Pin tối đa: <strong class="pinMax"></strong></p>
+	<p>Pin còn lại: <strong class="pin"></strong></p>
+	<button class="turnOn">Bật.</button>
+	<button class="turnOff">Tắt.</button>
+	<button class="viewInBox">Xem hòm thư đến</button>
+	<button class="viewSent">Xem hòm thư đi</button>
+	<button class="write">Soạn tin nhắn</button><br />
+	<div class="content"></div>
+</div>
+<br />
+<div id="iphone" style="padding: 15px; border: 1px solid #ddd">
+	<h3>Điện thoại iPhone.</h3>
+	<p>Trạng thái: <strong class="status">OFF</strong></p>
+	<p>Hòm thư đến: <strong class="thuDen">0</strong></p>
+	<p>Hòm thư đi: <strong class="thuDi">0</strong></p>
+	<p>Pin tối đa: <strong class="pinMax"></strong></p>
+	<p>Pin còn lại: <strong class="pin"></strong></p>
+	<button class="turnOn">Bật.</button>
+	<button class="turnOff">Tắt.</button>
+	<button class="viewInBox">Xem hòm thư đến</button>
+	<button class="viewSent">Xem hòm thư đi</button>
+	<button class="write">Soạn tin nhắn</button><br />
+	<div class="content"></div>
+</div>
+<script type="text/javascript">
+	let nokia  = new Mobile('Nokia',  5000, 4500, 'nokia');
+	let iphone = new Mobile('iPhone', 2000, 1500, 'iphone');
+	nokia.network.push(iphone);
+	iphone.network.push(nokia);
+</script>
+</body>
+</html>
